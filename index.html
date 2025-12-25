@@ -3,39 +3,404 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Jasbeer Singh | Backend Engineer" />
+    <meta
+      property="og:description"
+      content="Node.js & C++ Backend Developer Portfolio"
+    />
+
+    <title>Jasbeer Singh | Backend Engineer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
-    <title>Business Card</title>
   </head>
+
   <body>
-    <div class="page">
-      <div class="card-container">
-        <div class="logo">
-          <img src="assets/fake-logo.jpg" alt="Company logo" />
+    <!-- Background -->
+    <div class="background-blobs" aria-hidden="true">
+      <div class="blob b1"></div>
+      <div class="blob b2"></div>
+    </div>
+
+    <!-- Card -->
+    <main class="card" role="region" aria-label="Developer profile card">
+      <!-- Top bar -->
+      <div class="card-top">
+        <div class="status-pill">
+          <span class="dot"></span>
+          Open to Work
         </div>
-        <div class="info-container">
-          <div class="info">
-            <img
-              src="assets/personal-image.jpg"
-              alt="Jasbeer Singh Chauhan image"
-            />
-            <h1>Jasbeer Singh Chauhan</h1>
-            <h2>Web Developer</h2>
-            <p>
-              Hey, I am Jasbeer a full stack developer who is eager to build
-              things and explore unknown things to me
-            </p>
+
+        <button
+          type="button"
+          class="icon-btn"
+          id="shareBtn"
+          aria-label="Share profile link"
+        >
+          <i class="fa-solid fa-share-nodes"></i>
+        </button>
+      </div>
+
+      <!-- Header -->
+      <header class="header">
+        <div class="img-container">
+          <img
+            src="assets/personal-image.jpg"
+            alt="Portrait of Jasbeer Singh"
+            draggable="false"
+          />
+          <span class="emoji-badge" aria-hidden="true">👋</span>
+        </div>
+
+        <div class="identity">
+          <h2>Jasbeer Singh</h2>
+          <p class="code-role">&lt;BackendEngineer /&gt;</p>
+        </div>
+      </header>
+
+      <!-- Tabs -->
+      <nav class="tabs" role="tablist">
+        <button
+          type="button"
+          class="tab-btn active"
+          role="tab"
+          aria-selected="true"
+          data-tab="bio"
+        >
+          Bio
+        </button>
+        <button
+          type="button"
+          class="tab-btn"
+          role="tab"
+          aria-selected="false"
+          data-tab="stack"
+        >
+          Stack
+        </button>
+        <button
+          type="button"
+          class="tab-btn"
+          role="tab"
+          aria-selected="false"
+          data-tab="contact"
+        >
+          Connect
+        </button>
+      </nav>
+
+      <!-- Content -->
+      <section class="content-area">
+        <!-- Bio -->
+        <div id="bio" class="tab-content active" role="tabpanel">
+          <div class="code-block">
+            <span class="keyword">const</span>
+            <span class="var">dev</span> = {<br />
+            &nbsp;&nbsp;<span class="key">stack:</span> [<span class="string"
+              >"Node.js"</span
+            >, <span class="string">"C++"</span>],<br />
+            &nbsp;&nbsp;<span class="key">focus:</span>
+            <span class="string">"Systems, APIs, Concurrency"</span><br />
+            };
+          </div>
+
+          <p class="bio-text">
+            Building high-performance backend systems, scalable APIs, and
+            concurrency-driven services with a strong systems foundation.
+          </p>
+        </div>
+
+        <!-- Stack -->
+        <div id="stack" class="tab-content" role="tabpanel">
+          <div class="grid-skills">
+            <span class="skill"><i class="fa-brands fa-node"></i> Node.js</span>
+            <span class="skill"><i class="fa-solid fa-c"></i> C++</span>
+            <span class="skill"
+              ><i class="fa-solid fa-server"></i> Systems</span
+            >
+            <span class="skill"><i class="fa-solid fa-database"></i> SQL</span>
+            <span class="skill"
+              ><i class="fa-brands fa-docker"></i> Docker</span
+            >
+            <span class="skill"
+              ><i class="fa-solid fa-network-wired"></i> APIs</span
+            >
           </div>
         </div>
-        <div class="links">
-          <a href="https://jasbeersinghchauhan.github.io/myprofile.github.io/"
-            >Website</a
-          >
-          <a href="#">UPI</a>
-          <a href="https://www.linkedin.com/in/jasbeer-singh-chauhan-0086b9288/"
-            >Linkedin</a
-          >
+
+        <!-- Contact -->
+        <div id="contact" class="tab-content" role="tabpanel">
+          <div class="contact-actions">
+            <a
+              id="resumeLink"
+              class="action-row primary"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="icon-box">
+                <i class="fa-solid fa-file-pdf"></i>
+              </div>
+              <div class="text-box">
+                <span class="label">Download Resume</span>
+                <span class="sub">PDF Format</span>
+              </div>
+              <i class="fa-solid fa-download arrow"></i>
+            </a>
+
+            <button type="button" class="action-row" id="copyEmailBtn">
+              <div class="icon-box">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="text-box">
+                <span class="label">Copy Email</span>
+                <span class="sub" id="emailDisplay"></span>
+              </div>
+              <i class="fa-regular fa-copy arrow"></i>
+            </button>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="socials">
+          <a
+            href="https://github.com/jasbeersinghchauhan"
+            target="_blank"
+            rel="noopener"
+            class="social-link"
+            data-tooltip="GitHub"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/jasbeer-singh-chauhan-0086b9288/"
+            target="_blank"
+            rel="noopener"
+            class="social-link"
+            data-tooltip="LinkedIn"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a
+            href="https://jasbeersinghchauhan.github.io/myprofile.github.io/"
+            target="_blank"
+            rel="noopener"
+            class="social-link"
+            data-tooltip="Portfolio"
+          >
+            <i class="fa-solid fa-globe"></i>
+          </a>
+        </div>
+
+        <button type="button" class="upi-btn" id="upiBtn">
+          <span>Pay UPI</span>
+          <i class="fa-solid fa-bolt"></i>
+        </button>
+      </footer>
+    </main>
+
+    <script>
+      /* =========================
+         CONFIG
+      ========================= */
+      const CONFIG = {
+        email: "jasbeersinghchauhan377@gmail.com",
+        upiId: "jasbeersinghchauhan377@okicici",
+        resumeUrl:
+          "https://drive.google.com/file/d/1Ri18avSvOMiMy4VRevUWce_shWhxgSTk/view",
+      };
+
+      /* =========================
+         INIT
+      ========================= */
+      document.getElementById("emailDisplay").textContent = CONFIG.email;
+      document.getElementById("resumeLink").href = CONFIG.resumeUrl;
+
+      /* =========================
+         TABS
+      ========================= */
+      const tabButtons = document.querySelectorAll(".tab-btn");
+      const tabPanels = document.querySelectorAll(".tab-content");
+
+      tabButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const target = btn.dataset.tab;
+
+          tabButtons.forEach((b) => {
+            b.classList.remove("active");
+            b.setAttribute("aria-selected", "false");
+          });
+
+          tabPanels.forEach((p) => p.classList.remove("active"));
+
+          btn.classList.add("active");
+          btn.setAttribute("aria-selected", "true");
+          document.getElementById(target).classList.add("active");
+        });
+      });
+
+      /* =========================
+         CLIPBOARD (FIXED FOR FIREFOX)
+      ========================= */
+      async function copyToClipboard(text) {
+        // 1. Try Modern API (only works on HTTPS/Localhost)
+        if (navigator.clipboard && window.isSecureContext) {
+          try {
+            await navigator.clipboard.writeText(text);
+            return true; // Success
+          } catch (err) {
+            console.warn("Clipboard API failed, trying fallback...", err);
+          }
+        }
+
+        // 2. Fallback (execCommand) - Run synchronously immediately after failure
+        // We do not wrap this in a Promise to avoid losing "User Gesture" in Firefox
+        try {
+          const textarea = document.createElement("textarea");
+          textarea.value = text;
+
+          // Ensure it's not visible but part of the DOM
+          textarea.style.position = "fixed";
+          textarea.style.left = "-9999px";
+          textarea.style.top = "0";
+
+          document.body.appendChild(textarea);
+          textarea.focus();
+          textarea.select();
+
+          const successful = document.execCommand("copy");
+          document.body.removeChild(textarea);
+
+          if (!successful) throw new Error("execCommand returned false");
+          return true;
+        } catch (err) {
+          console.error("Fallback copy failed:", err);
+          return false;
+        }
+      }
+
+      /* =========================
+         COPY EMAIL
+      ========================= */
+      document
+        .getElementById("copyEmailBtn")
+        .addEventListener("click", async (e) => {
+          const label = e.currentTarget.querySelector(".label");
+          const icon = e.currentTarget.querySelector(".arrow");
+          const original = label.textContent;
+
+          const success = await copyToClipboard(CONFIG.email);
+
+          if (success) {
+            label.textContent = "Email Copied!";
+            label.style.color = "#4ade80";
+            icon.className = "fa-solid fa-check arrow";
+
+            setTimeout(() => {
+              label.textContent = original;
+              label.style.color = "";
+              icon.className = "fa-regular fa-copy arrow";
+            }, 2000);
+          } else {
+            alert("Could not copy email.");
+          }
+        });
+
+      /* =========================
+         COPY UPI
+      ========================= */
+      document.getElementById("upiBtn").addEventListener("click", async (e) => {
+        const btn = e.currentTarget;
+        const original = btn.innerHTML;
+
+        const success = await copyToClipboard(CONFIG.upiId);
+
+        if (success) {
+          btn.style.background = "#4ade80";
+          btn.style.color = "#000";
+          btn.innerHTML =
+            '<span>Copied!</span> <i class="fa-solid fa-check"></i>';
+
+          setTimeout(() => {
+            btn.style.background = "";
+            btn.style.color = "";
+            btn.innerHTML = original;
+          }, 2000);
+        } else {
+          alert("Could not copy UPI ID.");
+        }
+      });
+
+      /* =========================
+         SHARE BUTTON (ROBUST)
+      ========================= */
+      document
+        .getElementById("shareBtn")
+        .addEventListener("click", async (e) => {
+          const btn = e.currentTarget;
+          const icon = btn.querySelector("i");
+          const url = window.location.href;
+
+          // 1. Try Native Share (Mobile / Supported Browsers)
+          if (navigator.share) {
+            try {
+              await navigator.share({
+                title: "Jasbeer Singh | Backend Engineer",
+                text: "Check out this developer profile.",
+                url: url,
+              });
+              return; // If share menu opened, stop here.
+            } catch (err) {
+              // Ignore "AbortError" (User closed the share menu)
+              if (err.name !== "AbortError") {
+                console.error("Share API Error:", err);
+              }
+              // If it wasn't an abort, we continue to fallback below
+              if (err.name === "AbortError") return;
+            }
+          }
+
+          // 2. Fallback: Copy Link (Firefox Desktop / Unsupported)
+          const success = await copyToClipboard(url);
+
+          if (success) {
+            // Visual feedback that it COPIED, since no menu opened
+            const originalIconClass = icon.className;
+
+            icon.className = "fa-solid fa-check";
+            btn.style.color = "#4ade80";
+
+            // Optional: Add a temporary tooltip text
+            const tooltip = document.createElement("span");
+            tooltip.textContent = "Link Copied!";
+            tooltip.style.position = "absolute";
+            tooltip.style.bottom = "-30px";
+            tooltip.style.right = "0";
+            tooltip.style.fontSize = "0.8rem";
+            tooltip.style.color = "#4ade80";
+            tooltip.style.whiteSpace = "nowrap";
+            btn.style.position = "relative"; // Ensure tooltip positions correctly
+            btn.appendChild(tooltip);
+
+            setTimeout(() => {
+              icon.className = originalIconClass;
+              btn.style.color = "";
+              if (tooltip) btn.removeChild(tooltip);
+            }, 2000);
+          } else {
+            alert("Browser prevented sharing/copying.");
+          }
+        });
+    </script>
   </body>
 </html>
